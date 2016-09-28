@@ -1,11 +1,18 @@
 # stack of scene indices
 history = [0]
 
-debugMode = true
+debugMode = false
 
 # timestamps of scene starts in seconds
-sceneStarts = [0,22.3, 57.4, 87, 115.7, 153.8, 191.8, 240.7, 291.6, 342.9, 368.4, 415.8, 461.3, 507.3, 540.0, 568.2, 601.5, 619.1, 630.6, 639.7, 656,
-686]
+sceneStarts = [0,28.6, 63.9, 93.5, 122.3, 
+160.4, 
+198.4, 
+244, 
+294.8, 
+346.2, 
+371.9, 
+419.1, 
+464.9, 510.5, 549.6, 584.2, 620, 643.5, 659.3, 672.5, 692.7]
 
 # don't load children during intermediatry stage
 intermediaryStage = false
@@ -14,46 +21,49 @@ intermediaryStage = false
 #lateSceneLoads = [8, 16, 17, 5, 2, 12, 4,  7, 9, 3, 1, 6, 11]
 
 # buffer seconds before each scene that triggers "non-choice"
-bufferAtSceneEnd = 2
+bufferAtSceneEnd = 3
 
 # timestamp of choice starts in seconds
-choiceStarts = [17,51.4, 81, 109.7, 147.8, 185.8, 234.7, 285.6, 336.9, 362.4, 409.8, 455.3, 501.3, 535, 561.6, 586.5, 614, 625.7, 635.2, 650.8, 680.5]
+choiceStarts = [15.9,60.9, 90.5, 119.3, 157.4, 195.4, 241, 291.8, 343.2, 368.9, 416.1, 461.9, 507.5, 
+539.3, 570.2, 604.1, 634, 650.2, 663.4, 682, 716.9]
 
 # dictionary of choices with their starts and ends, and coordinates
 # {scene number: [['startTime', 'endTime', 'xMin', 'xMax', 'yMin', 'yMax'],['startTime': ..],...]}
 # for an end scene, choice skips to black screen and there are no valid buttons
 choiceIcons = {
-	0: [{'startTime': 17, 'endTime': 19.5, 'xMin': 460, 'xMax': 720, 'yMin': 170, 'yMax': 380, 'sceneLink': 14}],
-	1: [{'startTime': 51.4, 'endTime': 54, 'xMin': -1, 'xMax': -1, 'yMin': -1, 'yMax': -1, 'sceneLink': 0}],
-	2: [{'startTime': 81, 'endTime': 84, 'xMin': -1, 'xMax': -1, 'yMin': -1, 'yMax': -1, 'sceneLink': 0}],
-	3: [{'startTime': 110, 'endTime': 113, 'xMin': -1, 'xMax': -1, 'yMin': -1, 'yMax': -1, 'sceneLink': 0}],
-	4: [{'startTime': 148, 'endTime': 151, 'xMin': -1, 'xMax': -1, 'yMin': -1, 'yMax': -1, 'sceneLink': 0}],
-	5: [{'startTime': 186, 'endTime': 189, 'xMin': -1, 'xMax': -1, 'yMin': -1, 'yMax': -1, 'sceneLink': 0}],
-	6: [{'startTime': 235, 'endTime': 238, 'xMin': -1, 'xMax': -1, 'yMin': -1, 'yMax': -1, 'sceneLink': 0}],
-	7: [{'startTime': 285.5, 'endTime': 287, 'xMin': -1, 'xMax': -1, 'yMin': -1, 'yMax': -1, 'sceneLink': 0}],
-	8: [{'startTime': 337, 'endTime': 340, 'xMin': -1, 'xMax': -1, 'yMin': -1, 'yMax': -1, 'sceneLink': 0}],
-	9: [{'startTime': 362, 'endTime': 365, 'xMin': -1, 'xMax': -1, 'yMin': -1, 'yMax': -1, 'sceneLink': 0}],
-	10: [{'startTime': 410, 'endTime': 413, 'xMin': -1, 'xMax': -1, 'yMin': -1, 'yMax': -1, 'sceneLink': 0}],
-	11: [{'startTime': 455, 'endTime': 458, 'xMin': -1, 'xMax': -1, 'yMin': -1, 'yMax': -1, 'sceneLink': 0}],
-	12: [{'startTime': 501, 'endTime': 504, 'xMin': -1, 'xMax': -1, 'yMin': -1, 'yMax': -1, 'sceneLink': 0}],
-	13: [{'startTime': 535, 'endTime': 538, 'xMin': 544, 'xMax': 775, 'yMin': 390, 'yMax': 620, 'sceneLink': 12}],
-	14: [{'startTime': 561.6, 'endTime': 564.6, 'xMin': 180, 'xMax': 425, 'yMin': 60, 'yMax': 260, 'sceneLink': 19}, {'startTime': 564.4, 'endTime': 566.4, 'xMin': 440, 'xMax': 730, 'yMin': 200, 'yMax': 425, 'sceneLink': 10}],
-	15: [{'startTime': 586.5, 'endTime': 591, 'xMin': 740, 'xMax': 1000, 'yMin': 0, 'yMax': 200, 'sceneLink': 18}, 
-	{'startTime': 588.4, 'endTime': 593, 'xMin': 425, 'xMax': 800, 'yMin': 100, 'yMax': 600, 'sceneLink': 20}, 
-	{'startTime': 595.8, 'endTime': 599, 'xMin': 480, 'xMax': 830, 'yMin': 180, 'yMax': 500, 'sceneLink': 13}],
-	16: [{'startTime': 614, 'endTime': 618, 'xMin': 530, 'xMax': 660, 'yMin': 170, 'yMax': 270, 'sceneLink': 9}, 
-	{'startTime': 614, 'endTime': 618, 'xMin': 630, 'xMax': 750, 'yMin': 280, 'yMax': 400, 'sceneLink': 1},
-	{'startTime': 614, 'endTime': 618, 'xMin': 580, 'xMax': 730, 'yMin': 460, 'yMax': 580, 'sceneLink': 3}], 
-	17: [{'startTime': 625.7, 'endTime': 628.7, 'xMin': 374, 'xMax': 700, 'yMin': 286, 'yMax': 440, 'sceneLink': 5}],
-	18:  [{'startTime': 635.2, 'endTime': 638.2, 'xMin': 0, 'xMax': 300, 'yMin': 0, 'yMax': 300, 'sceneLink': 7}],
-	19:  [{'startTime': 650.8, 'endTime': 655, 'xMin': 740, 'xMax': 880, 'yMin': 0, 'yMax': 200, 'sceneLink': 8}, 
-	{'startTime': 650.8, 'endTime': 655, 'xMin': 150, 'xMax': 270, 'yMin': 0, 'yMax': 200, 'sceneLink': 16}, 
-	{'startTime': 650.8, 'endTime': 655, 'xMin': 150, 'xMax': 260, 'yMin': 580, 'yMax': 620, 'sceneLink': 17}],
-	20: [{'startTime': 680.5, 'endTime': 684.5, 'xMin': 460, 'xMax': 722, 'yMin': 433, 'yMax': 700, 'sceneLink': 6}]
+	0: [{'startTime': 15.9, 'endTime': 25.9, 'xMin': 460, 'xMax': 850, 'yMin': 0, 'yMax': 380, 'sceneLink': 14}],
+	1: [{'startTime': 57, 'endTime': 60, 'xMin': -1, 'xMax': -1, 'yMin': -1, 'yMax': -1, 'sceneLink': 0}],
+	2: [{'startTime': 87, 'endTime': 90, 'xMin': -1, 'xMax': -1, 'yMin': -1, 'yMax': -1, 'sceneLink': 0}],
+	3: [{'startTime': 115, 'endTime': 118, 'xMin': -1, 'xMax': -1, 'yMin': -1, 'yMax': -1, 'sceneLink': 0}],
+	4: [{'startTime': 153, 'endTime': 156, 'xMin': -1, 'xMax': -1, 'yMin': -1, 'yMax': -1, 'sceneLink': 0}],
+	5: [{'startTime': 191, 'endTime': 194, 'xMin': -1, 'xMax': -1, 'yMin': -1, 'yMax': -1, 'sceneLink': 0}],
+	6: [{'startTime': 237, 'endTime': 240, 'xMin': -1, 'xMax': -1, 'yMin': -1, 'yMax': -1, 'sceneLink': 0}],
+	7: [{'startTime': 286, 'endTime': 289, 'xMin': -1, 'xMax': -1, 'yMin': -1, 'yMax': -1, 'sceneLink': 0}],
+	8: [{'startTime': 339, 'endTime': 342, 'xMin': -1, 'xMax': -1, 'yMin': -1, 'yMax': -1, 'sceneLink': 0}],
+	9: [{'startTime': 365, 'endTime': 368, 'xMin': -1, 'xMax': -1, 'yMin': -1, 'yMax': -1, 'sceneLink': 0}],
+	10: [{'startTime': 411, 'endTime': 414, 'xMin': -1, 'xMax': -1, 'yMin': -1, 'yMax': -1, 'sceneLink': 0}],
+	11: [{'startTime': 458, 'endTime': 451, 'xMin': -1, 'xMax': -1, 'yMin': -1, 'yMax': -1, 'sceneLink': 0}],
+	12: [{'startTime': 504.5, 'endTime': 507.5, 'xMin': -1, 'xMax': -1, 'yMin': -1, 'yMax': -1, 'sceneLink': 0}],
+	13: [{'startTime': 539.3, 'endTime': 544.6, 'xMin': 600, 'xMax': 750, 'yMin': 420, 'yMax': 620, 'sceneLink': 12}],
+	14: [{'startTime': 570.2, 'endTime': 576.3, 'xMin': 0, 'xMax': 500, 'yMin': 0, 'yMax': 220, 'sceneLink': 19}, {'startTime': 576.8, 'endTime': 581.5, 'xMin': 500, 'xMax': 675, 'yMin': 220, 'yMax': 420, 'sceneLink': 10}],
+	15: [{'startTime': 604.1, 'endTime': 610, 'xMin': 500, 'xMax': 700, 'yMin': 0, 'yMax': 500, 'sceneLink': 20}, 
+	{'startTime': 612.5, 'endTime': 617.2, 'xMin': 500, 'xMax': 1100, 'yMin': 300, 'yMax': 425, 'sceneLink': 13},
+	{'startTime': 607, 'endTime': 610, 'xMin': 1000, 'xMax': 1150, 'yMin': 0, 'yMax': 150, 'sceneLink': 18},
+	{'startTime': 610.7, 'endTime': 616, 'xMin': 0, 'xMax': 300, 'yMin': 0, 'yMax': 300, 'sceneLink': 18}
+	],
+	16: [{'startTime': 634, 'endTime': 640.5, 'xMin': 625, 'xMax': 775, 'yMin': 75, 'yMax': 275, 'sceneLink': 9}, 
+	{'startTime': 634, 'endTime': 640.5, 'xMin': 600, 'xMax': 775, 'yMin': 300, 'yMax': 450, 'sceneLink': 1},
+	{'startTime': 634, 'endTime': 640.5, 'xMin': 600, 'xMax': 750, 'yMin': 480, 'yMax': 620, 'sceneLink': 3}], 
+	17: [{'startTime': 650.2, 'endTime': 656, 'xMin': 425, 'xMax': 525, 'yMin': 275, 'yMax': 375, 'sceneLink': 5}],
+	18:  [{'startTime': 663.4, 'endTime': 669.5, 'xMin': 0, 'xMax': 300, 'yMin': 0, 'yMax': 250, 'sceneLink': 7}],
+	19:  [{'startTime': 682, 'endTime': 690, 'xMin': 0, 'xMax': 300, 'yMin': 0, 'yMax': 300, 'sceneLink': 8}, 
+	{'startTime': 682, 'endTime': 690, 'xMin': 725, 'xMax': 950, 'yMin': 0, 'yMax': 200, 'sceneLink': 16}, 
+	{'startTime': 682, 'endTime': 690, 'xMin': 50, 'xMax': 250, 'yMin': 425, 'yMax': 600, 'sceneLink': 17}],
+	20: [{'startTime': 716.9, 'endTime': 722.7, 'xMin': 475, 'xMax': 800, 'yMin': 400, 'yMax': 650, 'sceneLink': 6}]
 }
 
 # non-action scene links for each scene 
-nonActionSceneLinks = [15,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,4,19,18,1,11,20,17,2]
+nonActionSceneLinks = [15,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,4,19,18,1,11,20,17,2]#[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20]
 
 # full scene links
 sceneLinks = [[14,15,-1],
@@ -87,20 +97,24 @@ videoContainer = new Layer
 	shadowColor: 'rgba(0,0,0,0.24)'
 	opacity: 1.0
 	
+# layer to display buffering icon in video
 loading = new Layer
 	width: 1320
 	height: 750
 	image: 'images/loading.gif'
 	opacity: 1.0
 	superLayer: videoContainer
-	
+
+# instructional layer displays at start of video 
+
+
 # create the video layer
 # make transparent until loading finishes
 videoLayerOne = new VideoLayer
 	x: 75
 	width: 1160
 	height: 650
-	video: 'http://d3rcw0c7h4lwii.cloudfront.net/stabbing.mp4'
+	video: 'http://d3rcw0c7h4lwii.cloudfront.net/stabbing_interactive.mp4'
 	superLayer: videoContainer
 	opacity: 0.0
 	
@@ -108,7 +122,7 @@ videoLayerTwo = new VideoLayer
 	x: 75
 	width: 1160
 	height: 650
-	video: 'http://d3rcw0c7h4lwii.cloudfront.net/stabbing.mp4'
+	video: 'http://d3rcw0c7h4lwii.cloudfront.net/stabbing_interactive.mp4'
 	superLayer: videoContainer
 	opacity: 0.0
 
@@ -116,7 +130,7 @@ videoLayerThree = new VideoLayer
 	x: 75
 	width: 1160
 	height: 650
-	video: 'http://d3rcw0c7h4lwii.cloudfront.net/stabbing.mp4'
+	video: 'http://d3rcw0c7h4lwii.cloudfront.net/stabbing_interactive.mp4'
 	superLayer: videoContainer
 	opacity: 0.0
 		
@@ -124,7 +138,7 @@ videoLayerFour = new VideoLayer
 	x: 75
 	width: 1160
 	height: 650
-	video: 'http://d3rcw0c7h4lwii.cloudfront.net/stabbing.mp4'
+	video: 'http://d3rcw0c7h4lwii.cloudfront.net/stabbing_interactive.mp4'
 	superLayer: videoContainer
 	opacity: 0.0
 	
@@ -226,22 +240,28 @@ window.setInterval( ->
 				activelyBuffering = 0
 				for j in [0...players[i].player.buffered.length]
 					if players[i].player.buffered.end(j) >= sceneStarts[currScenesInPlayers[i][currScenesInPlayers[i].length - 1]] and players[i].player.buffered.end(j) <= sceneStarts[currScenesInPlayers[i][currScenesInPlayers[i].length - 1]+1] 
-						print "A. SETTING ", i, "TO ", players[i].player.buffered.end(j)
+						if debugMode
+							print "A. SETTING ", i, "TO ", players[i].player.buffered.end(j)
 						players[i].player.currentTime = players[i].player.buffered.end(j)
 						activelyBuffering = 1
 			if activelyBuffering == 0
 				players[i].player.currentTime = sceneStarts[currScenesInPlayers[i][currScenesInPlayers[i].length - 1]]
-				print "B. SETTING", i, " TO", sceneStarts[currScenesInPlayers[i][currScenesInPlayers[i].length - 1]]
+				if debugMode
+					print "B. SETTING", i, " TO", sceneStarts[currScenesInPlayers[i][currScenesInPlayers[i].length - 1]]
 				
 	# advance to proper scene for a "non-choice" (or pause at end of movie)
 	currScene = history[history.length - 1]
-	if currPlayer.player.currentTime >= sceneStarts[currScene + 1] - 2 and currPlayer.player.currentTime <= sceneStarts[currScene + 1]
+	if currPlayer.player.currentTime >= sceneStarts[currScene + 1] - bufferAtSceneEnd and currPlayer.player.currentTime <= sceneStarts[currScene + 1]
 		if debugMode
 			print "nonaction on scene ", currScene
 		nonActionNextScene = nonActionSceneLinks[currScene]
 		# if not at end of movie
 		if nonActionNextScene != -1
 			transitionPlayersHelper(nonActionNextScene)
+		else
+			# if at end of movie, pause
+			currPlayer.player.pause()
+			playButton.image = "images/play.png"
 , 500)
 
 # control bar to hold buttons and timeline
@@ -256,25 +276,7 @@ controlBar = new Layer
 	
 # position control bar towards the bottom of the video
 controlBar.y = videoContainer.maxY - controlBar.height
-controlBar.x = 375
-
-
-# play button
-playButton = new Layer
-	width:100
-	height:100
-	image:'images/play.png'
-	superLayer:controlBar
-
-# on/off volume button
-volumeButton = new Layer
-	width:100
-	height:100
-	image:'images/volume_on.png'
-	superLayer:controlBar
-
-# position the volume button to the right of play
-volumeButton.x = playButton.maxX
+controlBar.x = videoContainer.width/2.0 - controlBar.width/2.0
 
 # back-scene layer
 backButton = new Layer
@@ -283,18 +285,15 @@ backButton = new Layer
 	image: 'images/back.png'
 	superLayer: controlBar
 
-# position back-scene button to the right of play
-backButton.x = volumeButton.maxX
-
-# skip to choice button
-skipToChoiceButton = new Layer
-	width: 100
-	height: 100
-	image: 'images/choose.png'
-	superLayer: controlBar
+# play button
+playButton = new Layer
+	width:100
+	height:100
+	image:'images/play.png'
+	superLayer:controlBar
 
 # position back-scene button to the right of play
-skipToChoiceButton.x = backButton.maxX
+playButton.x = backButton.maxX
 
 # home button
 homeButton = new Layer
@@ -302,9 +301,20 @@ homeButton = new Layer
 	height: 100
 	image: 'images/home.png'
 	superLayer: controlBar
-	
-# position home button to the right of choose
-homeButton.x = skipToChoiceButton.maxX	
+
+# position home button to the right of play
+homeButton.x = playButton.maxX	
+
+# skip to choice button
+skipToChoiceButton = new Layer
+	width: 100
+	height: 100
+	image: 'images/forward.png'
+	superLayer: controlBar
+
+# position skip button to the right of home
+skipToChoiceButton.x = homeButton.maxX
+
 
 # forward-scene layer
 forwardScene = new Layer
@@ -313,6 +323,18 @@ forwardScene = new Layer
 	#video: "images/morning.mp4"
 	superLayer: videoContainer
 	backgroundColor: ""
+		
+
+# buffering layer
+buffering = new Layer
+	width: 100
+	height: 100
+	image: 'images/buffering.gif'
+	superLayer: videoContainer
+
+buffering.x = videoContainer.width/2.0 - buffering.width/2.0
+buffering.y = videoContainer.height/2.0 - buffering.height/2.0
+buffering.sendToBack()
 
 # Function to handle play/pause button
 playButton.on Events.Click, ->
@@ -357,22 +379,28 @@ sceneChooseButtonChecker = (xCoord, yCoord) ->
 
 transitionPlayersHelper = (nextScene) ->
 	#turn current video layer off and stop it
+	#wasPaused = currPlayer.player.paused
 	currPlayer.player.pause()
 	intermediaryStage = true
 	# updates the statuses of all players
 	childSceneIndex = 0
+	findATargetPlayer = true
 	for playerIndex in [0...players.length]
 		playerSceneHistory = currScenesInPlayers[playerIndex]
-		if nextScene in playerSceneHistory
+		if nextScene in playerSceneHistory and findATargetPlayer
 			# found player for next scene. initiate
+			findATargetPlayer = false
 			nextPlayer = players[playerIndex]
 			currStatusOfPlayers[playerIndex] = 0
 			nextPlayer.player.currentTime = sceneStarts[nextScene]
+			#if !wasPaused
 			nextPlayer.player.play()
 			nextPlayer.player.muted = true
+			buffering.bringToFront()
 			# switch players once other player has gotten started
 			switchToNextPlayerID = window.setInterval( ->
 				if nextPlayer.player.currentTime > sceneStarts[nextScene] and nextPlayer.player.currentTime < sceneStarts[nextScene] + 1.0
+					buffering.sendToBack()
 					nextPlayer.opacity = 1.0
 					nextPlayer.player.muted = false
 					currPlayer.opacity = 0.0
@@ -407,45 +435,29 @@ forwardScene.on Events.Tap, (event) ->
 	
 	# if a click occurs while buttons are active during scene, check if a button was clicked
 	currTime = currPlayer.player.currentTime
+	#print currTime
+	#print event.point
 	if true in [Math.round(currTime) in  [Math.round(choiceStarts[x])... Math.round(sceneStarts[x+1])+1] for x in [0...sceneStarts.length-1]][0]
 		sceneChooseButtonChecker(xCoord, yCoord)
-
-# Volume on/off toggle
-volumeButton.on Events.Click, ->
-	if currPlayer.player.muted == false
-		currPlayer.player.muted = true
-		volumeButton.image = "images/volume_off.png"
-	else
-		currPlayer.player.muted = false
-		volumeButton.image = "images/volume_on.png"
-
-	# simple bounce effect on click
-	volumeButton.scale = 1.15
-	volumeButton.animate
-		properties:
-			scale:1
-		time:0.1
-		curve:'spring(900,30,0)'
+		
 
 # Function to handle back button
 backButton.on Events.Click, ->
 	if debugMode
 		print "going back"
+	#wasPaused = currPlayer.player.paused
 	currPlayer.player.pause()
 	intermediaryStage = true
-	timeIntoScene = currPlayer.player.currentTime - sceneStarts[history[history.length - 1]]
-	if debugMode
-		print "time into scene: ", timeIntoScene
-	# if more than 3s or at home scene, go to beginning of scene
-	if timeIntoScene > 3.0 or history.length == 1
-		currPlayer.player.currentTime = sceneStarts[history[history.length - 1]]
+	# if in first scene, go to start of scene
+	if history.length == 1
+		currPlayer.player.currentTime = 0
+		#if !wasPaused
 		currPlayer.player.play()
-	else	
+		playButton.image = "images/pause.png"
+	else
 		findATargetPlayer = true
-		# if less than 3s in, go to choice in previous scene
+		# go to choice in previous scene
 		lastScene = history.pop()
-		if (history.length == 0)
-			history.push(0)
 		targetScene = history[history.length - 1]
 		for playerIndex in [0...players.length]
 			playerSceneHistory = currScenesInPlayers[playerIndex]
@@ -457,10 +469,14 @@ backButton.on Events.Click, ->
 					print "found next player. targetScene: ", targetScene
 				nextPlayer.player.muted = true
 				nextPlayer.player.currentTime = choiceStarts[targetScene]
+				#if !wasPaused
 				nextPlayer.player.play()
+				playButton.image = "images/pause.png"
+				buffering.bringToFront()
 				# switch players once other player has gotten started
 				switchToBackPlayerID = window.setInterval( ->
 					if nextPlayer.player.currentTime > choiceStarts[targetScene] and nextPlayer.player.currentTime < choiceStarts[targetScene] + 1
+						buffering.sendToBack()
 						nextPlayer.opacity = 1.0
 						nextPlayer.player.muted = false
 						currPlayer.opacity = 0.0
@@ -486,16 +502,33 @@ backButton.on Events.Click, ->
 # Function to handle choose button
 skipToChoiceButton.on Events.Click, ->
 	currScene = history[history.length - 1]
-	currPlayer.player.muted = true
-	currPlayer.player.pause()
-	currPlayer.player.currentTime = choiceStarts[currScene]
-	currPlayer.player.play()
-	turnAudioBackOn = window.setInterval( ->
-		if currPlayer.player.currentTime > choiceStarts[currScene]
-			currPlayer.player.muted = false
-			window.clearInterval(turnAudioBackOn)
-	,100)
-	#videoLayer.player.fastSeek(choiceStarts[currScene])
+	
+	# jump to non action scene if already in a choice
+	if currPlayer.player.currentTime > choiceStarts[currScene]
+		nonActionNextScene = nonActionSceneLinks[currScene]
+		# if not at end of movie, jump to next nonaction scene
+		if nonActionNextScene != -1
+			transitionPlayersHelper(nonActionNextScene)
+		else
+			currPlayer.pause()
+			playButton.image = "images/play.png"
+	else
+		# otherwise go to next choice
+		currPlayer.player.muted = true
+		#wasPaused = currPlayer.player.paused
+		currPlayer.player.pause()
+		currPlayer.player.currentTime = choiceStarts[currScene]
+		# if this is not a final scene in a playthrough
+		if sceneLinks[currScene][0] != -1
+			#if !wasPaused
+			currPlayer.player.play()
+			turnAudioBackOn = window.setInterval( ->
+				if currPlayer.player.currentTime > choiceStarts[currScene]
+					currPlayer.player.muted = false
+					window.clearInterval(turnAudioBackOn)
+			,100)
+		else
+			playButton.image = "images/play.png"
 
 	# simple bounce effect on click
 	skipToChoiceButton.scale = 1.15
@@ -508,6 +541,7 @@ skipToChoiceButton.on Events.Click, ->
 # Function to handle home button
 homeButton.on Events.Click, ->
 	
+	#wasPaused = currPlayer.player.paused
 	currPlayer.player.pause()
 	currPlayer.opacity = 0.0
 	## just use first video player since it loaded the start scene
@@ -523,7 +557,9 @@ homeButton.on Events.Click, ->
 	currPlayer.player.currentTime = 0
 	currPlayer.opacity = 1.0
 	currPlayer.bringToFront()
+	#if !wasPaused
 	currPlayer.player.play()
+	playButton.image = "images/pause.png"
 		
 #white timeline bar
 # timeline = new Layer
@@ -546,7 +582,7 @@ homeButton.on Events.Click, ->
 # 	backgroundColor:'#03A9F4'
 # 	superLayer: timeline
 
-# scrubber to change current time
+#scrubber to change current time
 # scrubber = new Layer
 # 	width:50
 # 	height:50
@@ -574,29 +610,15 @@ homeButton.on Events.Click, ->
 # scrubber.draggable.overdrag = false
 
 
-# Update the progress bar and scrubber AND CURR/LAST SCENE as video plays
-#currPlayer.player.addEventListener "timeupdate", ->
-# window.setInterval( ->
-# 	#Calculate progress bar position
-# # 	newPos = (timeline.width / currPlayer.player.duration) * currPlayer.player.currentTime
-# # 
-# # 	#Update progress bar and scrubber
-# # 	scrubber.x = newPos
-# # 	progress.width = newPos	+ 10
+#Update the progress bar and scrubber AND CURR/LAST SCENE as video plays
+# currPlayer.player.addEventListener "timeupdate", ->
 # 
-# 	# advance to proper scene for a "non-choice" (or pause at end of movie)
-# 	currScene = history[history.length - 1]
-# 	print "DEBUG history: ", history
-# 	print "DEBUG STATUSES: ", currStatusOfPlayers
-# 	print "DEBUG SCENES: ", currScenesInPlayers
-# 	print "DEBUG time: ", currPlayer.player.currentTime
-# 	if currPlayer.player.currentTime >= sceneStarts[currScene + 1] - 2 and currPlayer.player.currentTime <= sceneStarts[currScene + 1]
-# 		print "nonaction on scene ", currScene
-# 		nonActionNextScene = nonActionSceneLinks[currScene]
-# 		# if not at end of movie
-# 		if nonActionNextScene != -1
-# 			transitionPlayersHelper(nonActionNextScene)
-# , 200)
+# 	#Calculate progress bar position
+# 	newPos = (timeline.width / currPlayer.player.duration) * currPlayer.player.currentTime
+# 	#Update progress bar and scrubber
+# 	scrubber.x = newPos
+# 	progress.width = newPos	+ 10
+# 
 # 
 # # Pause the video at start of drag
 # scrubber.on Events.DragStart, ->
@@ -612,4 +634,4 @@ homeButton.on Events.Click, ->
 # 	currPlayer.player.currentTime = newTime
 # 	currPlayer.player.play()
 # 	playButton.image = "images/pause.png"
-
+# 
