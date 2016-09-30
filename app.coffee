@@ -266,7 +266,7 @@ window.setInterval( ->
 
 # control bar to hold buttons and timeline
 controlBar = new Layer
-	width:500
+	width:1320
 	height:100
 	backgroundColor:'rgba(0,0,0,0.75)'
 	clip:false
@@ -278,12 +278,42 @@ controlBar = new Layer
 controlBar.y = videoContainer.maxY - controlBar.height
 controlBar.x = videoContainer.width/2.0 - controlBar.width/2.0
 
+helpVideoLayer = new VideoLayer
+	width: 1320
+	height: 750
+	video: 'images/stabbing_tutorial.mp4'
+	superLayer: videoContainer
+	opacity: 0.0
+	
+helpVideoLayer.states.add
+	helpOn:
+		opacity: 1.0
+		
+questionButton = new Layer
+	width: 100
+	height: 100
+	image: 'images/help.png'
+	superLayer: controlBar
+
+questionButton.on Events.Click, ->
+	controlBar.visible = false
+	currPlayer.player.pause()
+	playButton.image = "images/play.png"
+	helpVideoLayer.states.switch('helpOn')
+	helpVideoLayer.bringToFront()
+	helpVideoLayer.player.play()
+	helpVideoLayer.player.addEventListener "ended", ->
+		controlBar.visible = true
+		helpVideoLayer.states.switch('default')
+		helpVideoLayer.sendToBack()
+	
 # back-scene layer
 backButton = new Layer
 	width: 100
 	height: 100
 	image: 'images/back.png'
 	superLayer: controlBar
+backButton.x = 400
 
 # play button
 playButton = new Layer
@@ -522,6 +552,7 @@ skipToChoiceButton.on Events.Click, ->
 		if sceneLinks[currScene][0] != -1
 			#if !wasPaused
 			currPlayer.player.play()
+			playButton.image = "images/pause.png"
 			turnAudioBackOn = window.setInterval( ->
 				if currPlayer.player.currentTime > choiceStarts[currScene]
 					currPlayer.player.muted = false
